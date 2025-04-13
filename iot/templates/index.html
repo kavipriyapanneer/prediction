@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Health Check</title>
+</head>
+<body>
+    <h2>Enter Sensor Data</h2>
+    <form method="POST" action="/predict">
+        Voltage: <input name="voltage" step="0.01"><br>
+        Current: <input name="current" step="0.01"><br>
+        Temperature: <input name="temperature" step="0.01"><br>
+        Vibration: <input name="vibration" step="0.01"><br>
+        Power Factor: <input name="power_factor" step="0.01"><br><br>
+        <input type="submit" value="Check Status">
+    </form>
+
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+</body>
+</html>
+<!-- cd my_diagnostic_app -->
+<!-- python app.py -->
